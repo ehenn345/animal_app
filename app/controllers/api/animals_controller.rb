@@ -15,7 +15,16 @@ class Api::AnimalsController < ApplicationController
       age: params[:age],
       colors: params[:colors]
     )
+    @animal.save
     render 'show.json.jb'
   end
   
+  def update
+    @animal = Animal.find_by(id: params[:id])
+    @animal.name = params[:name] || @animal.name
+    @animal.age = params[:age] || @animal.age
+    @animal.colors = params[:colors] || @animal.colors
+    @animal.save
+    render 'show.json.jb'
+  end
 end
