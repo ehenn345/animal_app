@@ -27,4 +27,12 @@ class Api::AnimalsController < ApplicationController
     @animal.save
     render 'show.json.jb'
   end
+
+  def destroy
+    animal = Animal.find_by(id: params[:id])
+    animal = animal.destroy
+    render json: {message: "Item deleted."}
+  end
+
+  
 end
