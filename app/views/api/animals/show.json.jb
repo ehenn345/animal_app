@@ -1,0 +1,5 @@
+{
+  name: @animal.name,
+  age: @animal.age,
+  colors: @animal.colors
+}

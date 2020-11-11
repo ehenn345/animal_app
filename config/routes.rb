@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   # end
   namespace :api do
     get "/animals" => "animals#index"
+    get "/animals/:id" => "animals#show"
+    post "/animals" => "animals#create"
   end
 end
